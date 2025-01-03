@@ -1,1 +1,13 @@
+# Python関連
+__pycache__/
+*.pyc
+*.pyo
 
+# Jupyter Notebookのチェックポイント
+.ipynb_checkpoints/
+
+# データファイル
+data/
+
+# Virtual environment
+venv/
