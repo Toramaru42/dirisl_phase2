@@ -10,4 +10,8 @@ __pycache__/
 data/
 
 # Virtual environment
-venv/
+myenv2/
+
+# HTML レポートファイルを無視
+notebooks/dirislphase2_EDAreport.html
+
