@@ -4,7 +4,9 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-# %% ク
+
+# %%
+
 # クーポン付きのデータの取り込み
 df = pd.read_csv(r"C:\Users\toraL\dirisl_phase2\data\raw\abtest_results_for_coupon_sending.csv", encoding='utf-8')
 print(df.head())
@@ -84,6 +86,9 @@ import japanize_matplotlib
 profile = ydata_profiling.ProfileReport(df2)
 profile.to_notebook_iframe()
 # %%
+pd.plotting.scatter_matrix(df2, c='blue', figsize=(20, 20))
+
+# %%
 # visitとsegmentの相関
 #df2 = df.copy()
 import seaborn as sns
@@ -105,6 +110,36 @@ sns.heatmap(correlation2, annot=True, cmap='coolwarm', vmin=-1, vmax=1, center=0
 plt.title('変数間の相関係数')
 plt.show()
 
+# %%
+# クーポン送付の有無によるサイトに訪れた分布を可視化
+df_visit0 = df2.loc[df2['segment']==0]['visit']
+print(df_visit0.head())
+# %%
+df_visit0 = df_visit0.value_counts()
+
+print(df_visit0.head())
+# %%
+df_visit1 = df2.loc[df2['segment']==1]['visit']
+print(df_visit1.head())
+# %%
+df_visit1 = df_visit1.value_counts()
+
+print(df_visit1.head())
+# %%
+# クーポン送付の有無によるconversionの分布を可視化
+df_conversion0 = df2.loc[df2['segment']==0]['conversion']
+print(df_conversion0.head())
+# %%
+df_conversion0 = df_conversion0.value_counts()
+
+print(df_conversion0.head())
+# %%
+df_conversion1 = df2.loc[df2['segment']==1]['conversion']
+print(df_conversion1.head())
+# %%
+df_conversion1 = df_conversion1.value_counts()
+
+print(df_conversion1.head())
 # %%
 # 現状
 df_real = df = pd.read_csv(r"C:\Users\toraL\dirisl_phase2\data\raw\all_results_for_coupon_sending.csv", encoding='utf-8')
