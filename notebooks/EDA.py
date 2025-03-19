@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 # %%
 
 # クーポン付きのデータの取り込み
-df = pd.read_csv(r"C:\Users\toraL\dirisl_phase2\data\raw\abtest_results_for_coupon_sending.csv", encoding='utf-8')
+df = pd.read_csv(r"C:\Users\toraL\dirisl_phase2\data\raw\all_results_for_coupon_sending.csv", encoding='utf-8')
 print(df.head())
 
 # %% j
@@ -19,6 +19,13 @@ plt.plot([1, 2, 3], [4, 5, 6], label="テストライン")
 plt.title("日本語テスト")
 plt.legend()
 plt.show()
+# %%
+from IPython.core.display import display
+print(display)
+# %%
+import os
+print(os.path.exists("c:\\Users\\toraL\\dirisl_phase2\\myenv2\\Lib\\site-packages\\IPython\\core\\display.py"))
+
 # %%
 # EDA
 import ydata_profiling 
